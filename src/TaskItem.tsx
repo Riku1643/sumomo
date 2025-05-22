@@ -26,8 +26,8 @@ const TaskItem = ({ label }: TaskItemProps) => {
           }}
         />
       </Box>
-      <Box>
-        <Input inputProps={{ "aria-label": label }} sx={{ width: 275 }} />
+      <Box sx={{ width: 275 }}>
+        <span>{label}</span>
       </Box>
       <Box>
         <IconButton aria-label="edit">

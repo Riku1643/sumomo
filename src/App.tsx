@@ -5,9 +5,8 @@ import TaskItem from "./TaskItem.tsx";
 function App() {
   return (
     <>
-      <Button variant="contained">Contained</Button>
       <div>
-        <TaskItem label="My Task" />
+        <TaskItem label="ToDo" />
       </div>
     </>
   );
