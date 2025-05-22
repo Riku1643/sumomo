@@ -1,9 +1,8 @@
 import { Box } from "@mui/system";
 import Checkbox from "@mui/material/Checkbox";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import mIcon from "./assets/img_1747816091.png";
 import eIcon from "./assets/image 1.png";
-import Input from "@mui/material/Input";
 
 interface TaskItemProps {
   label: string;
@@ -27,7 +26,7 @@ const TaskItem = ({ label }: TaskItemProps) => {
         />
       </Box>
       <Box sx={{ width: 275 }}>
-        <span>{label}</span>
+        <Typography>{label}</Typography>
       </Box>
       <Box>
         <IconButton aria-label="edit">
