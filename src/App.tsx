@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "@mui/material";
+
 import TaskItem from "./TaskItem.tsx";
 import Header from "./Header";
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <div>
-        <TaskItem label="ToDo" />
+        <TaskItem label="Todo" />
       </div>
     </>
   );
