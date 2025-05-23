@@ -3,6 +3,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { IconButton, Typography } from "@mui/material";
 import mIcon from "./assets/img_1747816091.png";
 import eIcon from "./assets/image 1.png";
+import sIcon from "./assets/img_1747816091.png";
 import { useState } from "react";
 import { InputBase } from "@mui/material";
 
@@ -11,27 +12,27 @@ interface TaskItemProps {
 }
 
 const TaskItem = ({ label }: TaskItemProps) => {
-  const [Editing, sEditing] = useState(false);
-  const [Text, sText] = useState(label);
-  const [Backuptext, sBackupText] = useState(label);
-  const sEditClick = () => {
+  const [Editing, setEditing] = useState(false);
+  const [Text, setText] = useState(label);
+  const [Backuptext, setBackupText] = useState(label);
+  const setEditClick = () => {
     if (Editing) {
-      sEditing(false);
+      setEditing(false);
     } else {
-      sBackupText(Text);
-      sEditing(true);
+      setBackupText(Text);
+      setEditing(true);
     }
   };
-  const sCancelClick = () => {
-    sText(Backuptext);
-    sEditing(false);
+  const setCancelClick = () => {
+    setText(Backuptext);
+    setEditing(false);
   };
   const Change = (e: React.ChangeEvent<HTMLInputElement>) => {
-    sText(e.target.value);
+    setText(e.target.value);
   };
   const Keydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      sEditing(false);
+      setEditing(false);
     }
   };
   return (
@@ -65,16 +66,24 @@ const TaskItem = ({ label }: TaskItemProps) => {
               autoFocus
               placeholder="タスクを入力"
             />
-            <button onClick={sCancelClick}>cancel</button>
+            <button onClick={setCancelClick}>cancel</button>
           </Box>
         ) : (
-          <Typography>{Text}</Typography>
+          <Box>
+            <Typography>{Text}</Typography>
+          </Box>
         )}
       </Box>
       <Box marginTop={2}>
-        <IconButton aria-label="edit" onClick={sEditClick}>
-          <img src={eIcon} alt={"edit icon"} style={{ objectFit: "contain" }} />
+        <IconButton aria-label="edit" onClick={setEditClick}>
+          <img
+            src={Editing ? sIcon : eIcon}
+            alt={Editing ? sIcon : eIcon}
+            style={{ objectFit: "contain" }}
+          />
         </IconButton>
+      </Box>
+      <Box marginTop={2}>
         <IconButton aria-label="message">
           <img
             src={mIcon}
