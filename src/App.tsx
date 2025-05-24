@@ -4,6 +4,7 @@ import TaskItem from "./TaskItem.tsx";
 import Header from "./Header";
 import CircleAddButton from "./AddButton";
 import StarExample from "./priority-star.tsx";
+import { StayPrimaryLandscapeOutlined } from "@mui/icons-material";
 
 function App() {
   return (
@@ -11,10 +12,6 @@ function App() {
       <Header />
       <CircleAddButton />
       <TaskItem label="Todo" />
-      <div>
-        <h1></h1>
-        <StarExample />
-      </div>
     </Box>
   );
 }
