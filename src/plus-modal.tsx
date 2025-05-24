@@ -12,10 +12,17 @@ import eIcon from "./assets/image 1.png";
 interface sModalProps {
   open: boolean;
   onClose: () => void;
+  onAdd: (text: string) => void;
 }
 
-const SModal: React.FC<sModalProps> = ({ open, onClose }) => {
+const SModal: React.FC<sModalProps> = ({ open, onClose, onAdd }) => {
   const [text, setText] = useState("");
+  const handleAddClick = () => {
+    if (text.trim()) {
+      onAdd(text);
+      setText("");
+    }
+  };
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -67,7 +74,7 @@ const SModal: React.FC<sModalProps> = ({ open, onClose }) => {
           />
         </Box>
         <Box display="flex" justifyContent="flex-end">
-          <Button variant="text" onClick={onClose}>
+          <Button variant="text" onClick={handleAddClick}>
             追加
           </Button>
         </Box>
