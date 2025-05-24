@@ -75,13 +75,17 @@ const TaskItem = ({ label }: TaskItemProps) => {
         )}
       </Box>
       <Box marginTop={2}>
-        <IconButton aria-label="edit" onClick={setEditClick}>
-          <img
-            src={Editing ? sIcon : eIcon}
-            alt={Editing ? sIcon : eIcon}
-            style={{ objectFit: "contain" }}
-          />
-        </IconButton>
+        {Editing ? (
+          <button onClick={() => setEditing(false)}>OK</button>
+        ) : (
+          <IconButton aria-label="edit" onClick={setEditClick}>
+            <img
+              src={Editing ? sIcon : eIcon}
+              alt={Editing ? sIcon : eIcon}
+              style={{ objectFit: "contain" }}
+            />
+          </IconButton>
+        )}
       </Box>
       <Box marginTop={2}>
         <IconButton aria-label="message">
