@@ -2,10 +2,15 @@ import React from "react";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-const CircleAddButton: React.FC = () => {
+interface Props {
+  onClick: () => void;
+}
+
+const CircleAddButton: React.FC<Props> = ({ onClick }) => {
   return (
     <Button
       variant="contained"
+      onClick={onClick}
       sx={{
         backgroundColor: "#FFCBCB",
         position: "absolute",

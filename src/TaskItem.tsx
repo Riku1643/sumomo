@@ -7,6 +7,7 @@ import eIcon from "./assets/image 1.png";
 import sIcon from "./assets/img_1747816091.png";
 import { useState } from "react";
 import { InputBase } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 interface TaskItemProps {
   label: string;
@@ -59,10 +60,7 @@ const TaskItem = ({ label }: TaskItemProps) => {
   const handleClose = () => setOpen(false);
   return (
     <Box>
-      <Modal
-        open={open}
-        onClose={handleClose}
-      >
+      <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <img
             src="./img/おめでとう.png"
@@ -77,7 +75,6 @@ const TaskItem = ({ label }: TaskItemProps) => {
             slotProps={{
               input: { "aria-label": "Checkbox demo" },
             }}
-            defaultChecked
             sx={{
               color: "#ffab91",
               "&.Mui-checked": {
@@ -104,8 +101,9 @@ const TaskItem = ({ label }: TaskItemProps) => {
               <button onClick={setCancelClick}>cancel</button>
             </Box>
           ) : (
-            <Box>
+            <Box display="flex" alignItems="center" gap={1}>
               <Typography>{Text}</Typography>
+              <StarIcon sx={{ color: "pink" }} />
             </Box>
           )}
         </Box>
