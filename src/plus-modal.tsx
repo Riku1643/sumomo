@@ -23,6 +23,7 @@ const SModal: React.FC<sModalProps> = ({ open, onClose, onAdd }) => {
       setText("");
     }
   };
+  
   return (
     <Modal open={open} onClose={onClose}>
       <Box
