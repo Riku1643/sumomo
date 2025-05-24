@@ -1,8 +1,9 @@
 import "./App.css";
-import { Box, Button } from "@mui/material";
+import { Box, formGroupClasses } from "@mui/material";
 import TaskItem from "./TaskItem.tsx";
 import Header from "./Header";
 import CircleAddButton from "./AddButton";
+import StarExample from "./priority-star.tsx";
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       <Header />
       <CircleAddButton />
       <TaskItem label="Todo" />
+      <div>
+        <h1></h1>
+        <StarExample />
+      </div>
     </Box>
   );
 }
-
 export default App;
